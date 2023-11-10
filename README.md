@@ -9,7 +9,7 @@ Step 1:
 
 Step 2:
   - Save pcm-device-token from browser
-  - Create a CSV with 4 columns
+  - Create a CSV called 'pcm_cookies.csv' with 4 columns
       - name,value,domain,path
   - Load the values in the next row
 
