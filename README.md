@@ -2,10 +2,10 @@
 Step 1: 
   - Create a .env to root directory
   - Content has :
-      GC_DRIVER_PATH = path
-      USER_NAME = 'user'
-      USER_PASS = 'pass'
-      USER_PIN = 'pin'
+      - GC_DRIVER_PATH = path
+      - USER_NAME = 'user'
+      - USER_PASS = 'pass'
+      - USER_PIN = 'pin'
 
 Step 2:
   - Save pcm-device-token from browser
