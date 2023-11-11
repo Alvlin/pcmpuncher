@@ -13,9 +13,22 @@ Step 2:
       - name,value,domain,path
   - Load the values in the next row
 
-Step 3: 
-  - pip install all the modules
-    - Directly into folder OR create a .venv
+Step 3a: 
+  - Open Terminal & Navigate to pcmpuncher folder
+  - run:
+      ```
+      python -m venv ./.venv
+      ```
+      
+Step 3b:
+  - In the Terminal at "./pcmpuncher/"  : run 
+    ```
+    .venv\scripts\activate
+    ```
+  - run 
+    ```
+    pip install -r pip_installs.txt
+    ```
 
 Optional:
   - CREATE a .bat FILE
