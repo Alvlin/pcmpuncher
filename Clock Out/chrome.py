@@ -11,6 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+# from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -33,7 +34,7 @@ class gc_driver():
         load_dotenv()
         self.driver_path = Service(os.environ['GC_DRIVER_PATH'])
         self.ff_options = webdriver.ChromeOptions()
-        self.ff_options.add_argument('--headless')
+        # self.ff_options.add_argument('--headless')
         self.ff_options.add_argument("--window-size=1920,1080")
         self.ff_options.add_argument("--disable-extensions")
         self.ff_options.add_argument("--proxy-server='direct://'")
@@ -77,7 +78,7 @@ class gc_driver():
             punch_page = WebDriverWait(self.driver, 5).until(
                 EC.element_to_be_clickable((By.XPATH, '//ul[@class="cardLinks"]/li/a[@href="/v4/ee/web.php/timeclock/WEB04"]')))
             punch_page.click()
-            print('Loaded Clock In Page')
+            print(f'Loaded Clock In Page @ {dt.now()}')
         except:
             logging.error('Could Not Enter Clock In Page - Check XPATH...')
             self.driver.close()
@@ -98,11 +99,15 @@ class gc_driver():
         # print(self.driver.page_source)
 
     def reset_page_timer(self):
-        self.driver.refresh
+        self.driver.refresh()
         print(f'Refreshing Page @ {dt.now()}')
+        # print('--------------------------')
+        # source = self.driver.page_source
+        # soup = BeautifulSoup(source)
+        # print(soup.prettify)
 
     def start_scheduler(self):
-        schedule.every(.5).hours.do(self.reset_page_timer)
+        schedule.every(25).minutes.do(self.reset_page_timer)
         schedule.every().day.at("09:00").do(lambda: self.punch_in(in_day))  # 9 AM EST
         schedule.every().day.at("12:00").do(lambda: self.punch_in(out_lunch))  # 12 PM EST
         schedule.every().day.at("13:00").do(lambda: self.punch_in(in_lunch))  # 1 PM EST
