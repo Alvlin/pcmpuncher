@@ -15,7 +15,25 @@ Step 2:
 
 Step 3: 
   - pip install all the modules
+    - Directly into folder OR create a .venv
 
-Step 4: 
+Optional:
+  - CREATE a .bat FILE
+  - The <path_to_directory>\pcmpuncher is the folder where .venv is located
+   ```
+    @echo off
+    cd "<path_to_directory>\pcmpuncher"
+    REM Activate the virtual environment
+    call .venv\Scripts\activate
+    
+    REM Run your Python script
+    python clock_out\chrome.py
+   ```
+------------------------------------------------------------------------------
+OR:
   - Run on VSCODE (more resource intensive)
-  - Run on CMD ( python chrome.py )
+  - Run on CMD from root directory (where .venv is located)
+    ```
+    .venv/scripts/activate
+    python clock_out/chrome.py
+    ```
