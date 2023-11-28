@@ -94,6 +94,17 @@ class gc_driver():
                 break
         self.driver.refresh()
 
+    def prev_mod_cookie(self):
+        tfmt = "%m/%d/%Y"
+        modification_time = os.path.getmtime(gc_driver.cookie_path)
+        current_datetime = dt.now().strftime(tfmt)
+        modification_datetime = dt.strptime(time.ctime(modification_time),
+                                            "%a %b %d %H:%M:%S %Y").strftime(tfmt)
+        delta = dt.strptime(current_datetime, tfmt) - \
+            dt.strptime(modification_datetime, tfmt)
+        # print(f"Modification datetime: {modification_datetime}")
+        return f"{'Update 🍪':10s}[{30 - delta.days} Days]"
+    
     def schedule_links(self):
         # schedule.every(25).minutes.do(self.reset_page_timer)       # instead of keeping the site live just relog???
         # ---------------------------------------------------------------------------------------
@@ -143,6 +154,7 @@ class gc_driver():
             lambda: self.link_punch(OUTDAY))  # 5:59 PM EST
         # ---------------------------------------------------------------------------------------
         print(f'{"Scheduled":10s} [SUCCESS]')
+        print(self.prev_mod_cookie())
         while True:
             schedule.run_pending()
             time.sleep(1)
@@ -150,3 +162,5 @@ class gc_driver():
 
 script = gc_driver()
 script.schedule_links()
+# script.run_pcm()
+

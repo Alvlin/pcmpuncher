@@ -1,4 +1,0 @@
-GC_DRIVER_PATH = "driver\chromedriver.exe"
-USER_NAME = ''
-USER_PASS = ''
-USER_PIN = ''
