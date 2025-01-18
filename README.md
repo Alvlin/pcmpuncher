@@ -1,10 +1,9 @@
 # pcmpuncher
 Step 1: 
   - Create a .env to root directory
-  - Content has :
-      - GC_DRIVER_PATH = path
-      - USER_NAME = 'user'
-      - USER_PASS = 'pass'
+    - Put Paycom information here
+      - USER_NAME = 'paycomUser'
+      - USER_PASS = 'paycomPass'
       - USER_PIN = 'pin'
 
 Step 2:
