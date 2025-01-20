@@ -1,6 +1,6 @@
 # pcmpuncher
 Step 1: 
-  - Create a .env to root directory
+  - Modify .env file in root directory
     - Put Paycom information here
       - USER_NAME = 'paycomUser'
       - USER_PASS = 'paycomPass'
@@ -12,7 +12,6 @@ Step 2:
   - Modify file 'data/pcm_cookies.csv' with your cookie values
       - name,value,domain,path
       - pcm-device-token-xxxx, yyyy, www.paycomonline.net, /
-
 
 
 Step 3a: 
