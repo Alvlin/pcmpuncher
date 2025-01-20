@@ -31,7 +31,7 @@ Step 3b:
     pip install -r pip_installs.txt
     ```
 
-Optional:
+Optional: Windows
   - CREATE a .bat FILE
   - The <path_to_directory>\pcmpuncher is the folder where .venv is located
    ```
@@ -42,6 +42,19 @@ Optional:
     
     REM Run your Python script
     python clock_out\chrome.py
+   ```
+
+Optional: Mac
+  - CREATE a .sh FILE
+  - The <path_to_directory>\pcmpuncher is the folder where .venv is located
+   ```
+    #!/bin/bash
+    #Navigate to the Directory
+    cd "/User/Name/Documents/PCMFolder/
+    #Activate Virtual Environment
+    source .venv/bin/activate
+    #Run Python Script
+    python3 clockout/chrome.py
    ```
 ------------------------------------------------------------------------------
 OR:
