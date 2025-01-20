@@ -9,10 +9,9 @@ Step 1:
 Step 2:
   - Save pcm-device-token from browser
     - ![image](https://github.com/user-attachments/assets/6bb9df5a-8a0b-437f-848b-eee6c9e80737)  
-  - Create a CSV called 'pcm_cookies.csv' with 4 columns
+  - Modify file 'data/pcm_cookies.csv' with your cookie values
       - name,value,domain,path
       - pcm-device-token-xxxx, yyyy, www.paycomonline.net, /
-  - Load the values in the next row  
 
 
 
