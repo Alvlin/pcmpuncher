@@ -1,17 +1,18 @@
 # pcmpuncher
 Step 1: 
-  - Create a .env to root directory
-  - Content has :
-      - GC_DRIVER_PATH = path
-      - USER_NAME = 'user'
-      - USER_PASS = 'pass'
+  - Modify .env file in root directory
+    - Put Paycom information here
+      - USER_NAME = 'paycomUser'
+      - USER_PASS = 'paycomPass'
       - USER_PIN = 'pin'
 
 Step 2:
   - Save pcm-device-token from browser
-  - Create a CSV called 'pcm_cookies.csv' with 4 columns
+    - ![image](https://github.com/user-attachments/assets/6bb9df5a-8a0b-437f-848b-eee6c9e80737)  
+  - Modify file 'data/pcm_cookies.csv' with your cookie values
       - name,value,domain,path
-  - Load the values in the next row
+      - pcm-device-token-xxxx, yyyy, www.paycomonline.net, /
+
 
 Step 3a: 
   - Open Terminal & Navigate to pcmpuncher folder
@@ -30,7 +31,7 @@ Step 3b:
     pip install -r pip_installs.txt
     ```
 
-Optional:
+Optional: Windows
   - CREATE a .bat FILE
   - The <path_to_directory>\pcmpuncher is the folder where .venv is located
    ```
@@ -41,6 +42,19 @@ Optional:
     
     REM Run your Python script
     python clock_out\chrome.py
+   ```
+
+Optional: Mac
+  - CREATE a .sh FILE
+  - The <path_to_directory>\pcmpuncher is the folder where .venv is located
+   ```
+    #!/bin/bash
+    #Navigate to the Directory
+    cd "/User/Name/Documents/PCMFolder/
+    #Activate Virtual Environment
+    source .venv/bin/activate
+    #Run Python Script
+    python3 clockout/chrome.py
    ```
 ------------------------------------------------------------------------------
 OR:
