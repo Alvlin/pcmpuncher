@@ -36,7 +36,7 @@ class gc_driver():
         # self.driver_path = Service(os.environ['GC_DRIVER_PATH'])
         self.driver_path = Service(ChromeDriverManager().install())
         self.gc_options = webdriver.ChromeOptions()
-        # self.gc_options.add_argument('--headless')
+        self.gc_options.add_argument('--headless')
         self.gc_options.add_argument("--disable-extensions")
         self.gc_options.add_argument("--disable-gpu")
         self.gc_options.add_argument("--window-size=1500,900")
